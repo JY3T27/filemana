@@ -32,7 +32,7 @@ function handleImageError() {
         <div class="relative flex min-h-screen flex-col items-center justify-start selection:bg-[#FF2D20] selection:text-black">
             <div class="w-full px-0 lg:px-6"> <!-- Ensuring full width for the container -->
                 <!-- Header with navbar -->
-                <header class="grid grid-cols-1 items-center gap-2 py-4 lg:grid-cols-3 bg-white w-full rounded-md">
+                <header class="grid grid-cols-1 items-center gap-2 py-4 lg:grid-cols-2 bg-white w-full rounded-md">
                     <nav v-if="canLogin" class="flex justify-start items-center w-full">
                         <div class="flex px-3">
                             <span class="text-4xl font-bold text-black">
@@ -47,10 +47,10 @@ function handleImageError() {
                             Dashboard
                         </Link>
                         <template v-else>
-                            <div class="px-5">
+                            <div class="mx-5">
                                 <Link
                                     :href="route('login')"
-                                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
+                                    class="rounded-md px-2 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
                                 >
                                     Log in
                                 </Link>
@@ -58,7 +58,7 @@ function handleImageError() {
                                 <Link
                                     v-if="canRegister"
                                     :href="route('register')"
-                                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
+                                    class="rounded-md px-2 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
                                 >
                                     Register
                                 </Link>

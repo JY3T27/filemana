@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FileDataController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -48,5 +49,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/filedata/{filedata}', [FileDataController::class, 'destroy'])->name('filedata.destroy');
 });
 
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('adminDashboard');
+});
 
 require __DIR__.'/auth.php';
